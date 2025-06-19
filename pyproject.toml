@@ -1,0 +1,28 @@
+[project]
+name = "nvi-gpkg-validator"
+version = "0.1.0"
+description = "Validate GeoPackages used as the exchange format for the Swedish NVI standard SS 199000:2023."
+authors = [
+    {name = "Andreas Eriksson",email = "eandreaseriksson@protonmail.com"}
+]
+license = { text = "GPL-3.0-or-later" }
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[project.optional-dependencies]
+gdal = [ "gdal>=3.11" ]
+
+[project.scripts]
+nvi-gpkg-validator = "nvi_gpkg_validator.console:run"
+
+[tool.poetry]
+packages = [
+    {include = "nvi_gpkg_validator", from = "src"},
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
