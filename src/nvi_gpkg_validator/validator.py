@@ -148,6 +148,8 @@ class NviGPGKValidator:
                             sql = f"""select 1 from {table.name}
                                     where {colname} not like strftime('{strftime_pattern}', {colname})
                                 """
+                            if dt_type != "DATE":
+                                sql += f" or {colname} not like '%Z'" 
                             result = con.execute(sql).fetchall()
                             if len(result) > 0:
                                 errors.append(

@@ -133,12 +133,7 @@ class NviGPKGCheckConstraints:
                 "check": "FK_Naturvardestrad_punkt is not null or FK_Naturvardestrad_yta is not null",
                 "columns": ["FK_Naturvardestrad_punkt", "FK_Naturvardestrad_yta"],
                 "tables": ["motivering"],
-            },
-            "FK_biotoptyp": {
-                "check": "FK_NVINaturvardesbiotop is not null or FK_OvrigBiotop is not null",
-                "columns": ["FK_NVINaturvardesbiotop", "FK_OvrigBiotop"],
-                "tables": ["biotoptyp"],
-            },
+            }
         }
 
     def add_to_gpkg(self, gpkg: NviGPKG) -> None:

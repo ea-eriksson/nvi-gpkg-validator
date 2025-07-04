@@ -1,2 +1,4 @@
 poetry.lock
-src/nvi_gpkg_validator/__pycache__/
+.vscode/
+tests/testgpkg/testdata.gpkg
+**/__pycache__/
